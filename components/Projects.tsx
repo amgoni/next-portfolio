@@ -4,13 +4,13 @@ import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="pb-12">
+    <section id="projects" className="bg-white py-16 dark:bg-black">
       <Reveal variant="up">
-        <h1 className="text-5xl max-md:text-[1.8em] font-bold w-fit mx-auto py-12">
+        <h2 className="font-montserrat mb-8 text-center text-3xl font-bold md:text-5xl dark:text-white">
           FEATURED PROJECTS
-        </h1>
+        </h2>
       </Reveal>
-      <div className="w-4/5 mx-auto flex flex-col items-center">
+      <div className="mx-auto flex flex-col items-center gap-16 md:w-4/5">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}

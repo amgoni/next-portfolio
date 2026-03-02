@@ -9,6 +9,7 @@ interface DrawerProps {
   onClose: () => void;
   children: React.ReactNode;
   side?: "left" | "right";
+  width?: "full" | string;
 }
 
 export default function Drawer({
@@ -16,7 +17,9 @@ export default function Drawer({
   onClose,
   children,
   side = "right",
+  width = "70%",
 }: DrawerProps) {
+  const resolvedWidth = width === "full" ? "100%" : width;
   // Prevent body scroll when open
   useEffect(() => {
     if (isOpen) {
@@ -85,7 +88,8 @@ export default function Drawer({
             animate="animate"
             exit="exit"
             variants={slideVariants}
-            className={`fixed top-0 bottom-0 z-50 flex w-[70%] flex-col bg-gradient-to-br from-[#3a7bd5] to-dark-text shadow-xl ${
+            style={{ width: resolvedWidth }}
+            className={`to-dark-text fixed top-0 bottom-0 z-50 flex flex-col bg-linear-to-br from-[#3a7bd5] shadow-xl dark:bg-black dark:bg-none ${
               side === "left" ? "left-0" : "right-0"
             }`}
           >
@@ -94,13 +98,13 @@ export default function Drawer({
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="cursor-pointer text-white text-2xl p-2 hover:opacity-70 transition-opacity"
+                className="cursor-pointer p-2 text-2xl text-white transition-opacity hover:opacity-70"
               >
                 ✕
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto overflow-x-hidden text-white">
+            <div className="flex-1 overflow-x-hidden overflow-y-auto text-white">
               {children}
             </div>
           </motion.div>

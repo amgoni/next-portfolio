@@ -16,7 +16,7 @@ function cn(...classes: Array<string | false | null | undefined>): string {
 }
 
 const base =
-  "inline-flex items-center justify-center whitespace-nowrap font-bold tracking-wider cursor-pointer transition-all duration-300 border-2 focus:opacity-50 focus:scale-105";
+  "inline-flex items-center font-montserrat justify-center whitespace-nowrap font-bold tracking-wider cursor-pointer transition-all duration-300 border-2 focus:opacity-50 focus:scale-105";
 
 const variantColorClasses: Record<
   ButtonColor,
@@ -24,26 +24,26 @@ const variantColorClasses: Record<
 > = {
   primary: {
     default:
-      "bg-white text-dark-text border-dark-text hover:bg-dark-text hover:text-white",
+      "bg-white text-dark-text border-dark-text hover:bg-dark-text hover:text-white dark:bg-white dark:text-black dark:border-white dark:hover:bg-transparent dark:hover:text-white",
     outlined:
-      "bg-transparent text-dark-text border-dark-text hover:bg-dark-text hover:text-white",
+      "bg-transparent text-dark-text border-dark-text hover:bg-dark-text hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black",
     ghost:
-      "bg-transparent text-dark-text border-transparent hover:bg-dark-text/10",
+      "bg-transparent text-dark-text border-transparent hover:bg-dark-text/10 dark:text-white dark:hover:bg-white/10",
   },
   white: {
     default:
-      "bg-white text-dark-text border-dark-text hover:bg-transparent hover:text-white hover:border-light-bg",
+      "bg-white text-dark-text border-dark-text hover:bg-transparent hover:text-white hover:border-light-bg dark:bg-white dark:text-black dark:border-white dark:hover:bg-transparent dark:hover:text-white",
     outlined:
-      "bg-transparent text-white border-white hover:bg-white hover:text-dark-text",
+      "bg-transparent text-white border-white hover:bg-white hover:text-dark-text dark:hover:text-black",
     ghost: "bg-transparent text-white border-transparent hover:bg-white/10",
   },
   accent: {
     default:
-      "bg-dark-text text-white border-dark-text hover:bg-white hover:text-dark-text",
+      "bg-dark-text text-white border-dark-text hover:bg-white hover:text-dark-text dark:bg-white dark:text-black dark:border-white dark:hover:bg-transparent dark:hover:text-white",
     outlined:
-      "bg-transparent text-dark-text border-dark-text hover:bg-dark-text hover:text-white",
+      "bg-transparent text-dark-text border-dark-text hover:bg-dark-text hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black",
     ghost:
-      "bg-transparent text-dark-text border-transparent hover:bg-dark-text/10",
+      "bg-transparent text-dark-text border-transparent hover:bg-dark-text/10 dark:text-white dark:hover:bg-white/10",
   },
 };
 

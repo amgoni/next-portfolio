@@ -1,33 +1,47 @@
 @import "tailwindcss";
 
-@theme inline {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
   --color-light-bg: #d0f3fa;
   --color-dark-bg: #0077b6;
   --color-dark-text: #103b74;
   --color-light-text: #d0f3fa;
   --color-extra: #0077b6;
-  --font-lato: var(--font-lato-family);
-}
-
-/* ── Global resets ── */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  --color-silver: #c0c0c0;
+  --font-lato: var(--font-poppins);
+  --font-montserrat: var(--font-montserrat);
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: var(--font-lato), "Lato", sans-serif;
   letter-spacing: 0.8px;
   color: var(--color-dark-text);
   background: white;
+  overflow-x: hidden;
+}
+
+.dark body {
+  color: #ffffff;
+  background: #000000;
+}
+
+/* ── Heading font ── */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-montserrat);
+  }
 }
 
 a {
   text-decoration: none;
-  color: inherit;
 }

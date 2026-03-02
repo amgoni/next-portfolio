@@ -5,15 +5,28 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="grid grid-cols-[40%_60%] max-md:grid-cols-1 gap-5 mb-24 max-md:mb-12">
+    <article className="grid grid-cols-1 gap-8 px-4 md:grid-cols-[40%_60%] md:px-0">
       <Reveal variant="left" className="flex flex-col justify-center">
-        <h3 className="text-2xl max-md:text-xl font-bold mb-2 uppercase">
+        <h3 className="mb-4 text-xl font-bold uppercase md:mb-2 md:text-2xl dark:text-white">
           {project.title}
         </h3>
-        <p className="text-xl max-md:text-base leading-9 max-md:leading-relaxed py-2.5 pr-2.5">
+
+        {/* Mobile preview image */}
+        <div className="mb-6 block md:hidden">
+          <Image
+            src={project.image}
+            alt={project.imageAlt}
+            width={800}
+            height={500}
+            sizes="90vw"
+            className="w-full shadow-md"
+          />
+        </div>
+
+        <p className="mb-4 text-base leading-relaxed md:text-xl md:leading-9 dark:text-white">
           {project.description}
         </p>
-        <div className="flex gap-3 mt-2">
+        <div className="flex justify-center gap-4 md:justify-start">
           <Button asChild size="default">
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
               See Live
@@ -32,13 +45,14 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </Reveal>
-      <Reveal variant="right" delay={0.3}>
+      <Reveal variant="right" className="hidden md:block">
         <Image
           src={project.image}
           alt={project.imageAlt}
           width={800}
           height={500}
-          className="w-full h-auto shadow-md"
+          sizes="48vw"
+          className="w-full shadow-md"
         />
       </Reveal>
     </article>

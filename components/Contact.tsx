@@ -1,28 +1,59 @@
 import Reveal from "@/components/ui/reveal";
 import Button from "@/components/ui/button";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
+const socials = [
+  {
+    label: "GitHub",
+    href: "https://github.com/amgoni",
+    icon: FaGithub,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/amingoni/",
+    icon: FaLinkedinIn,
+  },
+];
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-linear-to-br from-[#3a7bd5] to-dark-text text-white min-h-[50vh] max-md:min-h-0"
+      className="to-dark-text bg-linear-to-br from-[#3a7bd5] py-16 text-white dark:bg-black dark:bg-none"
     >
-      <div className="w-4/5 mx-auto flex flex-col items-center py-12 max-md:py-8">
+      <div className="flex flex-col items-center gap-4">
         <Reveal variant="up">
-          <h1 className="text-5xl max-md:text-[1.8em] font-bold py-8 max-md:py-6 max-md:text-center">
-            CONTACT ME
-          </h1>
+          <h2 className="font-montserrat mb-4 text-center text-3xl font-bold md:text-5xl">
+            CONTACT
+          </h2>
         </Reveal>
-        <Reveal variant="up" delay={0.3}>
-          <p className="text-xl max-md:text-base max-md:text-center leading-9">
-            Looking to hire a Front-End Developer or Blog Writer?
+        <Reveal variant="up" delay={0.1}>
+          <p className="text-center text-base md:text-xl">
+            Looking to hire a Web Developer?
           </p>
         </Reveal>
-        <Reveal variant="up" delay={0.5}>
-          <Button asChild color="white" variant="outlined" className="mt-4">
+        <Reveal variant="up" delay={0.2}>
+          <Button asChild color="white" variant="outlined" className="">
             <a href="mailto:ameen.m.goney@gmail.com">E-mail Me!</a>
           </Button>
         </Reveal>
+        <ul className="mt-4 flex list-none gap-16">
+          {socials.map((social, index) => (
+            <Reveal variant="up" key={social.label} delay={index * 0.3}>
+              <li>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="inline-block transition-transform duration-300 hover:scale-120"
+                >
+                  <social.icon className="text-3xl md:text-5xl" />
+                </a>
+              </li>
+            </Reveal>
+          ))}
+        </ul>
       </div>
     </section>
   );
