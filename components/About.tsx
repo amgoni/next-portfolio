@@ -12,7 +12,7 @@ const skills = [
 
 const tools = [
   "HTML | CSS | Sass",
-  "Javascript | ReactJS | NextJS",
+  "Javascript | ReactJS | Next.js | Vue.js",
   "Firebase | Laravel | AWS",
   "MS Office",
   "Canva",
