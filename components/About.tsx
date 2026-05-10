@@ -52,9 +52,9 @@ export default function About() {
             className="w-full text-base leading-relaxed md:w-[70%] md:text-lg md:leading-9"
           >
             <p className="mb-4">
-              I&apos;m a fullstack web developer passionate about building
+              I&apos;m a fullstack software developer passionate about building
               modern, and user-centered digital experiences. With a strong
-              foundation in React and Next.js and growing expertise in backend
+              foundation in React and Next.js and expertise in backend
               architecture, I focus on creating applications that are intuitive,
               accessible, and useful.
             </p>
@@ -65,8 +65,8 @@ export default function About() {
               high-impact user interfaces.
             </p>
             <p className="mb-4">
-              Beyond software development, I enjoy writing football, movies and
-              TV shows, reading, and playing video games.
+              Beyond software development, I enjoy watching football, reading,
+              and playing chess and video games.
             </p>
           </Reveal>
         </div>

@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="flex justify-center gap-4 md:justify-start">
           <Button asChild size="default">
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              See Live
+              {project.liveUrlLabel || "See Live"}
             </a>
           </Button>
           {project.codeUrl && (
